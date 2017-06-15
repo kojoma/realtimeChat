@@ -7,7 +7,15 @@ channel.join();
 
 $("form").submit(function(e) {
     e.preventDefault();
-    channel.push("send_message", {content: $("#input-send-message").val()});
+    var room_id = parseInt($("#room-id").val(), 10);
+    var content = $("#input-send-message").val();
+    // TODO: user_idはユーザ機能を作るときに適切な値をいれる
+    var message = {
+        user_id: 0,
+        room_id: room_id,
+        content: content
+    };
+    channel.push("send_message", message);
     $("#input-send-message").val("");
 });
 

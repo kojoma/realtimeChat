@@ -1,5 +1,6 @@
 <h2>Lobby</h2>
 
+<input type="hidden" id="room-id" value="0" />
 <div id="received-messages">
   <%= for message <- @messages do %>
     <div class="received-message"><%= message.content %></div>

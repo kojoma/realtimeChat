@@ -11,11 +11,10 @@ defmodule RealtimeChat.RoomChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  def handle_in("send_message", %{"content" => content}, socket) do
-    # TODO: user_id, room_idはそれぞれの機能を作るときに適切な値をいれるように修正する
+  def handle_in("send_message", %{"user_id" => user_id, "room_id" => room_id, "content" => content}, socket) do
     message = %Message{
-      user_id: 0,
-      room_id: 0,
+      user_id: user_id,
+      room_id: room_id,
       content: content,
     }
     {:ok, _inserted_message} = Repo.insert(message)
