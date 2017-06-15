@@ -5,7 +5,7 @@ socket.connect();
 var channel = socket.channel("rooms:lobby", {});
 channel.join();
 
-$("form").submit(function(e) {
+$("#send-message").submit(function(e) {
     e.preventDefault();
     var room_id = parseInt($("#room-id").val(), 10);
     var content = $("#input-send-message").val();

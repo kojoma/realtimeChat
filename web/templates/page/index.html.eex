@@ -6,7 +6,7 @@
     <div class="received-message"><%= message.content %></div>
   <% end %>
 </div>
-<form class="form-inline">
+<form class="form-inline" id="send-message">
   <div class="form-group">
     <input type="text" class="form-control" id="input-send-message">
   </div>
