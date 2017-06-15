@@ -16,7 +16,11 @@ defmodule RealtimeChat.Router do
   scope "/", RealtimeChat do
     pipe_through :browser # Use the default browser stack
 
+    # Lobby
     get "/", PageController, :index
+
+    # Room
+    resources "/rooms", RoomController
   end
 
   # Other scopes may use custom stacks.
