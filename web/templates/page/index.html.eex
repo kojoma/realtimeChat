@@ -1,10 +1,15 @@
+<h2>Lobby</h2>
+
+<div id="received-messages">
+  <%= for message <- @messages do %>
+    <div class="received-message"><%= message.content %></div>
+  <% end %>
+</div>
 <form class="form-inline">
   <div class="form-group">
     <input type="text" class="form-control" id="input-send-message">
   </div>
   <button type="submit" class="btn btn-default">Send</button>
 </form>
-<div id="received-messages">
-</div>
 
 <%= link "List room", to: room_path(@conn, :index) %>

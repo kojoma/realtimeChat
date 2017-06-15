@@ -1,20 +1,9 @@
 <h2>Room: <%= @room.name %></h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>user_id</th>
-      <th>message</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for message <- @messages do %>
-    <tr>
-      <td><%= message.user_id %></td>
-      <td><%= message.content %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div id="received-messages">
+  <%= for message <- @messages do %>
+    <div class="received-message"><%= message.content %></div>
+  <% end %>
+</div>
 
 <%= link "List room", to: room_path(@conn, :index) %>
