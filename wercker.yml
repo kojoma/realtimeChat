@@ -1,0 +1,33 @@
+box: lyokato/amazonlinux-elixir-test
+
+services:
+  - id: mysql
+    env:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: realtimechat_test
+
+build:
+  steps:
+    - script:
+        name: install mysql client
+        code: sudo yum -y install mysql
+    - script:
+        name: setup hex
+        code: MIX_ENV=test mix local.hex --force
+    - script:
+        name: setup rebar
+        code: MIX_ENV=test mix local.rebar --force
+    - script:
+        name: mix deps.get, compile
+        code: MIX_ENV=test mix do deps.get, compile
+    - script:
+        name: mix test
+        code: mix test
+  after-steps:
+    - slack-notifier:
+        url: https://hooks.slack.com/services/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
+        channel: test
+        username: wercker
+        branch: master
