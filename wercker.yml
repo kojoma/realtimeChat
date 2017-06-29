@@ -1,4 +1,5 @@
-box: parkerjm/elixir-mysql:latest
+box: lyokato/amazonlinux-elixir-test
+#box: parkerjm/elixir-mysql:latest
 
 services:
   - id: mysql
