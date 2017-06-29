@@ -1,4 +1,4 @@
-box: kazw/elixir-phoenix-ci
+box: parkerjm/elixir-mysql:latest
 
 services:
   - id: mysql
@@ -10,9 +10,6 @@ services:
 
 build:
   steps:
-    - script:
-        name: install mysql client
-        code: sudo yum -y install mysql
     - script:
         name: setup hex
         code: MIX_ENV=test mix local.hex --force
