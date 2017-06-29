@@ -1,4 +1,4 @@
-box: lyokato/amazonlinux-elixir-test
+box: manukall/elixir@0.0.12
 
 services:
   - id: mysql
