@@ -11,6 +11,9 @@ services:
 build:
   steps:
     - script:
+        name: elixir version
+        code: elixir -v
+    - script:
         name: setup hex
         code: MIX_ENV=test mix local.hex --force
     - script:
