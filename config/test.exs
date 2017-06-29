@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :realtimeChat, RealtimeChat.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "",
+  password: "password",
   database: "realtimechat_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

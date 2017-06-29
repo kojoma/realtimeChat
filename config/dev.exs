@@ -37,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 config :realtimeChat, RealtimeChat.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "",
+  password: "password",
   database: "realtimechat_dev",
   hostname: "localhost",
   pool_size: 10
